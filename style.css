@@ -1,3 +1,4 @@
+/* Existing styles */
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
@@ -5,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -65,13 +70,13 @@ body {
 }
 
 .home-content {
-    max-width: 600px;
+    max-width: 900px;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 1.5s;
 }
 
 .home-content h3 {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
     margin-bottom: 10px;
     animation: fadeInUp 1s ease forwards;
@@ -91,7 +96,7 @@ body {
 }
 
 .home-content p {
-    font-size: 20px;
+    font-size: 24px;
     margin: 20px 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 1.8s;
@@ -134,7 +139,6 @@ body {
     box-shadow: 0 0 20px #ff0048;
 }
 
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -176,30 +180,21 @@ body {
 	}
 }
 
-.projects-section {
-    margin: 50px 10%;
-    text-align: center;
-}
-
-.projects-header {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #fff;
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 2s;
-}
-
 .project-info {
     max-width: 900px;
 }
 
 .project-info h2 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 2.4s;
+}
+
+.project-info h2:hover {
+    color: #ff0048;
+    cursor: pointer;
 }
 
 .project-info p {
@@ -209,17 +204,32 @@ body {
 }
 
 /* Project section styling */
-.projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.projects-section {
     margin: 50px 10%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.projects-header {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
     animation: fadeIn 1s ease forwards;
     animation-delay: 2s;
 }
 
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
 .project {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 30px 0;
     width: 100%;
@@ -227,30 +237,129 @@ body {
     background: #101820;
     padding: 30px;
     border-radius: 10px;
-    
     animation: fadeInUp 1s ease forwards;
     animation-delay: 2.2s;
 }
 
-.project:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.project-img-left,
-.project-img-right {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: 0 20px;
+.project-img {
+    margin-bottom: 20px;
     animation: fadeIn 1s ease forwards;
     animation-delay: 2.3s;
 }
 
+.project-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* Line between projects */
 hr {
-    width: 60%;
+    width: 70%;
     border: 1px solid #fff;
     margin: 40px 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 2.6s;
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    .project {
+        flex-direction: row;
+    }
+
+    .project.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .project-img {
+        margin: 0 20px 0 0;
+    }
+
+    .project.reverse .project-img {
+        margin: 0 0 0 20px;
+    }
+
+    .project-info {
+        margin: 0 20px;
+    }
+}
+
+.skills-section {
+    margin: 100px 10%;
+    text-align: center;
+    color: #fff;
+}
+
+.skills-header {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.skills-category {
+    margin-bottom: 40px;
+}
+
+.skills-category h4 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.skill {
+    background: #20232a;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    background: #ff0048;
+    color: #1f242d;
+}
+
+.skill i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.contact-section {
+    margin: 100px 10%;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-header {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
 }
