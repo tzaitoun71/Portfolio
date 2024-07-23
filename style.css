@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    background: #101820;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.header, .navbar a, .home, .home-content, .home-content h3, .home-content h1, .home-content p, .home-img img, .social-media a, .btn {
+    opacity: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: default;
+    text-decoration: none;
+}
+
+.navbar a {
+    display: inline-flex;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;    
+    transition: color 0.4s;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i) + 0.5s);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 70px 10% 0;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content {
+    max-width: 600px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-content h3 span {
+    color: #ff0048;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.7s;
+}
+
+.home-content p {
+    font-size: 20px;
+    margin: 20px 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.home-img img {
+    max-width: 450px;
+    animation: fadeIn 1s ease forwards, zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 1.9s, 3s;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid #ff0048;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #ff0048;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: calc(.2s * var(--i) + 2s);
+}
+
+.social-media a:hover {
+    background: #ff0048;
+    color: #1f242d;
+    box-shadow: 0 0 20px #ff0048;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatImage{
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-24px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.projects-section {
+    margin: 50px 10%;
+    text-align: center;
+}
+
+.projects-header {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.project-info {
+    max-width: 900px;
+}
+
+.project-info h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 2.4s;
+}
+
+.project-info p {
+    font-size: 20px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+/* Project section styling */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 10%;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 1200px;
+    background: #101820;
+    padding: 30px;
+    border-radius: 10px;
+    
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 2.2s;
+}
+
+.project:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-img-left,
+.project-img-right {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 20px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.3s;
+}
+
+/* Line between projects */
+hr {
+    width: 60%;
+    border: 1px solid #fff;
+    margin: 40px 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.6s;
+}
