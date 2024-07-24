@@ -7,6 +7,11 @@
     <title>Tariq | Portfolio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script>
+        function handleProjectClick(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -24,13 +29,12 @@
             <h1>Tariq Zaitoun</h1>
             <h3>I am a <span class="multiple-text"></span></h3>
             <p>
-                My hobbies include Physics and Computer science. This Website is just a showcase of my programming skills.
-                You can find some inspiration for your own too, or else you can hire me as a Front-end Developer for your website!
+                Fully committed to the philosophy of lifelong learning, I'm a software engineer based in Toronto, ON, with a deep passion for AI and full-stack development. 
+                The combination of creativity and technology drives my excitement and curiosity.
             </p>
             <div class="social-media">
-                <a href="https://www.github.com" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
-                <a href="https://www.linkedin.com/in/arin-chatterjee-7a6298311/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
-                <a href="https://discordapp.com/users/1247098858924937309" target="_blank" style="--i: 3"><i class="bx bxl-discord-alt"></i></a>
+                <a href="https://github.com/tzaitoun71" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/tariq-zaitoun/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
         <div class="home-img">
@@ -42,11 +46,11 @@
         <h3 class="projects-header">Projects</h3>
         <section class="projects">
             <div class="project">
-                <div class="project-img">
-                    <img src="images/eventscheduler.jpg" alt="Project 1" />
+                <div class="project-img" onclick="handleProjectClick('https://github.com/tzaitoun71/EventSchedulerAPI')">
+                    <img src="images/eventscheduler.jpg" alt="EventScheduler" />
                 </div>
                 <div class="project-info">
-                    <h2>Event Scheduler</h2>
+                    <h2 onclick="handleProjectClick('https://github.com/tzaitoun71/EventSchedulerAPI')">Event Scheduler</h2>
                     <p>
                         A web app for event planning and management with user registration, authentication, and event creation. Built with React.js, Spring Boot, and MongoDB.
                     </p>
@@ -54,11 +58,11 @@
             </div>
             <hr />
             <div class="project reverse">
-                <div class="project-img">
-                    <img src="images/shapeshyft.jpg" alt="Project 2" />
+                <div class="project-img" onclick="handleProjectClick('https://github.com/Jacobdcrewe/ShapeShyft')">
+                    <img src="images/shapeshyft.jpg" alt="ShapeShyft" />
                 </div>
                 <div class="project-info">
-                    <h2>ShapeShyft</h2>
+                    <h2 onclick="handleProjectClick('https://github.com/Jacobdcrewe/ShapeShyft')">ShapeShyft</h2>
                     <p>
                         A fitness tracker web app for tracking food and water intake, exercise, and searching for exercises and food recipes. Developed using React.js, FastAPI, and SQL.
                     </p>
@@ -66,11 +70,11 @@
             </div>
             <hr />
             <div class="project">
-                <div class="project-img">
-                    <img src="images/amazonlogo.jpg" alt="Project 3" />
+                <div class="project-img" onclick="handleProjectClick('https://e-commerce-ac41e.web.app/')">
+                    <img src="images/amazonlogo.jpg" alt="Amazon Clone" />
                 </div>
                 <div class="project-info">
-                    <h2>Amazon Clone</h2>
+                    <h2 onclick="handleProjectClick('https://e-commerce-ac41e.web.app/')">Amazon Clone</h2>
                     <p>
                         An Amazon clone where users can view, add products to their cart, and purchase items using Stripe. Built with React.js, TypeScript, Express.js, and Firebase.
                     </p>
@@ -78,11 +82,11 @@
             </div>
             <hr />
             <div class="project reverse">
-                <div class="project-img">
-                    <img src="images/instagramlogo.JPG" alt="Project 3" />
+                <div class="project-img" onclick="handleProjectClick('https://social-media-website-44b4e.web.app/')">
+                    <img src="images/instagramlogo.JPG" alt="Instagram Clone" />
                 </div>
                 <div class="project-info">
-                    <h2>Instagram Clone</h2>
+                    <h2 onclick="handleProjectClick('https://social-media-website-44b4e.web.app/')">Instagram Clone</h2>
                     <p>
                         An Instagram clone with dynamic user interactions and real-time messaging, featuring posts, comments, likes, and instant messaging. Built with React.js, TypeScript, and Firebase.
                     </p>
@@ -138,7 +142,7 @@
                     <p>Node.js</p>
                 </div>
                 <div class="skill">
-                    <i class="bx bxl-nodejs"></i>
+                    <i class="bx bxl-express"></i>
                     <p>Express.js</p>
                 </div>
                 <div class="skill">
