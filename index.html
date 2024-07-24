@@ -11,16 +11,24 @@
         function handleProjectClick(url) {
             window.open(url, '_blank');
         }
+
+        function clearForm() {
+            setTimeout(function() {
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        }
     </script>
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
-            <a href="#home" style="--i: 1" class="active">Home</a>
-            <a href="#projects" style="--i: 2">Projects</a>
-            <a href="#skills" style="--i: 3">Skills</a>
-            <a href="#contact" style="--i: 4">Contact</a>
-        </nav>
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <a href="#home" style="--i: 1" class="active">Home</a>
+                <a href="#projects" style="--i: 2">Projects</a>
+                <a href="#skills" style="--i: 3">Skills</a>
+                <a href="#contact" style="--i: 4">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <section id="home" class="home">
@@ -33,8 +41,18 @@
                 The combination of creativity and technology drives my excitement and curiosity.
             </p>
             <div class="social-media">
-                <a href="https://github.com/tzaitoun71" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
-                <a href="https://www.linkedin.com/in/tariq-zaitoun/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
+                <div class="tooltip">
+                    <a href="https://drive.google.com/your_resume_link" target="_blank" style="--i: 6"><i class="bx bxs-file-doc"></i></a>
+                    <span class="tooltiptext">Resume</span>
+                </div>
+                <div class="tooltip">
+                    <a href="https://www.github.com" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
+                    <span class="tooltiptext">Github</span>
+                </div>
+                <div class="tooltip">
+                    <a href="https://www.linkedin.com/in/arin-chatterjee-7a6298311/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
+                    <span class="tooltiptext">LinkedIn</span>
+                </div>
             </div>
         </div>
         <div class="home-img">
@@ -181,8 +199,39 @@
 
     <section id="contact" class="contact-section">
         <h3 class="contact-header">Contact</h3>
-        <!-- Add your contact details or form here -->
+        <div class="contact-content">
+            <div class="profile-picture">
+                <img src="images/tariq.jpg" alt="Profile Picture">
+            </div>
+            <div class="contact-details">
+                <div class="tooltip">
+                    <a href="mailto:tariq.s.zaitoun@gmail.com" target="_blank" style="--i: 6"><i class='bx bx-envelope'></i></a>
+                    <span class="tooltiptext">Email</span>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwaqkjg" method="POST" onsubmit="clearForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </section>
+    
+
+    <script>
+        function clearForm() {
+            setTimeout(function() {
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        }
+    </script>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>

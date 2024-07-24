@@ -35,6 +35,11 @@ body {
     z-index: 100;
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.5s;
+    background-color: #101820;
+}
+
+section {
+    padding-top: 20px; /* Adjust according to the height of your header */
 }
 
 .logo {
@@ -56,6 +61,13 @@ body {
     animation: fadeInUp 1s ease forwards;
     animation-delay: calc(0.2s * var(--i) + 0.5s);
 }
+
+.navbar a:hover {
+    color: #ff0048;
+    text-shadow: 0 0 10px #ff0048;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
 
 .home {
     display: flex;
@@ -115,7 +127,7 @@ body {
     margin-top: 20px;
 }
 
-.social-media a {
+.social-media a, .contact-details a {
     display: inline-flex;
     width: 50px;
     height: 50px;
@@ -133,7 +145,7 @@ body {
     animation-delay: calc(.2s * var(--i) + 2s);
 }
 
-.social-media a:hover {
+.social-media a:hover, .contact-details a:hover {
     background: #ff0048;
     color: #1f242d;
     box-shadow: 0 0 20px #ff0048;
@@ -293,7 +305,7 @@ hr {
 }
 
 .skills-section {
-    margin: 250px 10%;
+    margin: 50px 10%;
     text-align: center;
     color: #fff;
 }
@@ -368,4 +380,156 @@ hr {
     color: #fff;
     animation: fadeIn 1s ease forwards;
     animation-delay: 2s;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    margin-left: -40px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contact-section {
+    margin: 100px 10%;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-header {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.contact-details {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.contact-details a {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid #ff0048;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #ff0048;
+    text-decoration: none;
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: calc(.2s * var(--i) + 2s);
+    margin-left: 15px;
+}
+
+.contact-details a:hover {
+    background: #ff0048;
+    color: #1f242d;
+    box-shadow: 0 0 20px #ff0048;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #20232a;
+    color: #fff;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #ff0048;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #e6003d;
+}
+
+section {
+    padding-top: 55px; 
+}
+
+/* Style for smooth scrolling offset */
+html {
+    scroll-behavior: smooth;
 }
