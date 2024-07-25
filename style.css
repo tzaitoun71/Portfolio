@@ -81,6 +81,12 @@ section {
     animation-delay: 1s;
 }
 
+@media (max-width: 600px) {
+    .home {
+        margin-top: 150px;
+    }
+}
+
 .home-content {
     max-width: 900px;
     animation: fadeInUp 1s ease forwards;
