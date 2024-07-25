@@ -17,6 +17,27 @@
                 document.getElementById('contactForm').reset();
             }, 1000);
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
 </head>
 <body>
@@ -31,7 +52,7 @@
         </div>
     </header>
 
-    <section id="home" class="home">
+    <section id="home" class="home" data-animation="fade-in">
         <div class="home-content">
             <h3>Hello, Visitor! I am</h3>
             <h1>Tariq Zaitoun</h1>
@@ -42,15 +63,15 @@
             </p>
             <div class="social-media">
                 <div class="tooltip">
-                    <a href="https://drive.google.com/your_resume_link" target="_blank" style="--i: 6"><i class="bx bxs-file-doc"></i></a>
+                    <a href="Tariq_Zaitoun_Resume.pdf" target="_blank" style="--i: 6"><i class="bx bxs-file-doc"></i></a>
                     <span class="tooltiptext">Resume</span>
                 </div>
                 <div class="tooltip">
-                    <a href="https://www.github.com" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
+                    <a href="https://github.com/tzaitoun71" target="_blank" style="--i: 4"><i class="bx bxl-github"></i></a>
                     <span class="tooltiptext">Github</span>
                 </div>
                 <div class="tooltip">
-                    <a href="https://www.linkedin.com/in/arin-chatterjee-7a6298311/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/tariq-zaitoun/" target="_blank" style="--i: 5"><i class="bx bxl-linkedin"></i></a>
                     <span class="tooltiptext">LinkedIn</span>
                 </div>
             </div>
@@ -60,7 +81,7 @@
         </div>
     </section>
 
-    <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section" data-animation="fade-in">
         <h3 class="projects-header">Projects</h3>
         <section class="projects">
             <div class="project">
@@ -92,7 +113,7 @@
                     <img src="images/amazonlogo.jpg" alt="Amazon Clone" />
                 </div>
                 <div class="project-info">
-                    <h2 onclick="handleProjectClick('https://e-commerce-ac41e.web.app/')">Amazon Clone</h2>
+                    <h2 onclick="handleProjectClick('https://e-commerce-ac41e.web.app/')">Amazon Tech Store</h2>
                     <p>
                         An Amazon clone where users can view, add products to their cart, and purchase items using Stripe. Built with React.js, TypeScript, Express.js, and Firebase.
                     </p>
@@ -104,7 +125,7 @@
                     <img src="images/instagramlogo.JPG" alt="Instagram Clone" />
                 </div>
                 <div class="project-info">
-                    <h2 onclick="handleProjectClick('https://social-media-website-44b4e.web.app/')">Instagram Clone</h2>
+                    <h2 onclick="handleProjectClick('https://social-media-website-44b4e.web.app/')">Social Media Network</h2>
                     <p>
                         An Instagram clone with dynamic user interactions and real-time messaging, featuring posts, comments, likes, and instant messaging. Built with React.js, TypeScript, and Firebase.
                     </p>
@@ -113,7 +134,7 @@
         </section>
     </section>
 
-    <section id="skills" class="skills-section">
+    <section id="skills" class="skills-section" data-animation="fade-in">
         <h3 class="skills-header">Skills</h3>
         <div class="skills-category">
             <h4>Languages</h4>
@@ -197,7 +218,7 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" data-animation="fade-in">
         <h3 class="contact-header">Contact</h3>
         <div class="contact-content">
             <div class="profile-picture">
@@ -205,7 +226,7 @@
             </div>
             <div class="contact-details">
                 <div class="tooltip">
-                    <a href="mailto:tariq.s.zaitoun@gmail.com" target="_blank" style="--i: 6"><i class='bx bx-envelope'></i></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tariq.s.zaitoun@gmail.com&su=Contact%20via%20Portfolio&body=Hello%20Tariq," target="_blank" style="--i: 6"><i class='bx bx-envelope'></i></a>
                     <span class="tooltiptext">Email</span>
                 </div>
             </div>
@@ -223,15 +244,6 @@
             </form>
         </div>
     </section>
-    
-
-    <script>
-        function clearForm() {
-            setTimeout(function() {
-                document.getElementById('contactForm').reset();
-            }, 1000);
-        }
-    </script>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
