@@ -17,27 +17,6 @@
                 document.getElementById('contactForm').reset();
             }, 1000);
         }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-        });
     </script>
 </head>
 <body>
@@ -52,7 +31,7 @@
         </div>
     </header>
 
-    <section id="home" class="home" data-animation="fade-in">
+    <section id="home" class="home">
         <div class="home-content">
             <h3>Hello, Visitor! I am</h3>
             <h1>Tariq Zaitoun</h1>
@@ -81,7 +60,7 @@
         </div>
     </section>
 
-    <section id="projects" class="projects-section" data-animation="fade-in">
+    <section id="projects" class="projects-section">
         <h3 class="projects-header">Projects</h3>
         <section class="projects">
             <div class="project">
@@ -134,7 +113,7 @@
         </section>
     </section>
 
-    <section id="skills" class="skills-section" data-animation="fade-in">
+    <section id="skills" class="skills-section">
         <h3 class="skills-header">Skills</h3>
         <div class="skills-category">
             <h4>Languages</h4>
@@ -218,7 +197,7 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section" data-animation="fade-in">
+    <section id="contact" class="contact-section">
         <h3 class="contact-header">Contact</h3>
         <div class="contact-content">
             <div class="profile-picture">
